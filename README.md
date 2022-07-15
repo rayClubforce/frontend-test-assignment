@@ -59,12 +59,14 @@ Make sure that the mechanism you develop is resource agnostic. This means that i
 
 Restict your implementation to only resolve directly related resources (do not load and cache all `people` and use them when needed). Given the example of `/species/1` you should only load the four related `people` and six related `films`. So the `planets` related to the `people` should not be fetched since these are not directly related to the `species`.
 
-How the UI looks is up to you. A polished UI is not necessary, you can use any out of the box framework (e.g. material-ui). We would like to see clean and efficient code. We are mostly interested in how you approach the assignment.
+How the UI looks is up to you. A polished UI is not necessary, you can use any out of the box framework (e.g. bootstrap). We would like to see clean and efficient code. We are mostly interested in how you approach the assignment.
+
+Use the redux store pattern (with the ngrx library, for instance) to communicate between the api service class and the component class.
 
 We would like to see:
 
 - Angular best practices
-- State management
+- State management - ngrx redux store pattern
 - Unit tests for your resource fetching mechanism
 
 ## Data
