@@ -10,32 +10,33 @@ Nx, Cypress
 ### Requirements and guidelines
 - Angular v14
   - Component classes
-    - Only use pure functions/methods
-    - Do not use subscribe()
-    - Do not inject the api service class
-    - Use Post and Posts interfaces
+    - Do not inject the api service class in any component class!
+    - Only use pure function methods
+    - Do not use subscribe() to access data from the ngrx selector
+    - Use Post and Posts interfaces to strongly type service/ngrx
 - NgRx store
   - commit posts list and post detail page data to the state
   - expose actions/selectors to component (and optionally, resolvers)
-- sass, Bootstrap
-  - UI must closely follow the included screenshots
-  - UI must have basic reactive view for a small/mobile device screen size
-- jest
+- Sass, Bootstrap
+  - UI must have basic reactive view for a small/mobile screen size
+- Jest
   - Write unit tests for 'create' component class and mock one observable
-- Explain your code with inline comments
+- Explain your coding process with inline comments
 - Write your code for readability
 
 ## Your application should contain
 - A menu with the links: "Posts" and "Create Post"
 - List posts page
 	- Filter posts by title using a text input 
-	- Refresh the search results when user stops typing after 500ms
-  - Each List item should contain a link to the item's details page
+	- Refresh the filtered results when user stops typing after 500ms
+  - Link each displayed post to the post's details page
 - Post details page
+  - Do not use the InputDecorator in the component class
 - Create post page
   - Title and Body text inputs - both required
 	- Validate that the new post tile starts with the letter 'x'
-  - Show validation error 
+  - Show validation error
+  - Redirect to the "List posts" page after ngrx 'create' action is successful
 
 
 ## Bonus
