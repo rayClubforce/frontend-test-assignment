@@ -14,6 +14,7 @@ Nx, Cypress
     - Only use pure function methods
     - Do not use subscribe() to access data from the ngrx selector
     - Use Post and Posts interfaces to strongly type service/ngrx
+    - Type all method return types
 - NgRx store
   - commit posts list and post detail page data to the state
   - expose actions/selectors to component (and optionally, resolvers)
@@ -27,7 +28,8 @@ Nx, Cypress
 ## Your application should contain
 - A menu with the links: "Posts" and "Create Post"
 - List posts page
-	- Filter posts by title using a text input 
+	- Filter posts by title text input 
+    - Call the api endpoint with filter value and display results
 	- Refresh the filtered results when user stops typing after 500ms
   - Link each displayed post to the post's details page
 - Post details page
@@ -36,10 +38,11 @@ Nx, Cypress
   - Title and Body text inputs - both required
 	- Validate that the new post tile starts with the letter 'x'
   - Show validation error
-  - Redirect to the "List posts" page after ngrx 'create' action is successful
+  - Redirect to the "List posts" page After ngrx 'create' action Is Successful
 
 
 ## Bonus
+- Use destructuring and arrow functions to improve readability
 - Use Nx to hide the service from the component classes
 - Create usecases and entity classes to encapsulate business rules (title validation)
 
