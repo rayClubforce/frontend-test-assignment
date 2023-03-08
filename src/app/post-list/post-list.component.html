@@ -1,0 +1,19 @@
+<div class="row">
+  <h2 class="col-12 col-lg-6">Post List</h2>
+  <div class="col-12 col-lg-6">
+    <input
+      class="form-control"
+      placeholder="Filter posts by title"
+      [formControl]="filter"
+    />
+  </div>
+</div>
+<hr />
+<div class="col-12" *ngIf="(posts$ | async)?.length; else noResults">
+  <section *ngFor="let post of posts$ | async">
+    {{ post | json }}
+    <app-post-list-item [post]="post"></app-post-list-item>
+  </section>
+</div>
+
+<ng-template #noResults>No results found</ng-template>

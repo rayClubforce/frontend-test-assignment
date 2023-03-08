@@ -1,0 +1,62 @@
+<h2>Create post</h2>
+<hr />
+<section [formGroup]="postForm">
+  <div class="row gy-3">
+    <div
+      class="col-12 col-lg-6"
+      [class.field-error]="
+        (postForm.controls['title'].dirty ||
+          postForm.controls['title'].touched) &&
+        postForm.controls['title'].errors
+      "
+    >
+      <input formControlName="title" placeholder="Title" class="form-control" />
+      <div
+        class="error-box"
+        *ngIf="
+          (postForm.controls['title'].dirty ||
+            postForm.controls['title'].touched) &&
+          postForm.controls['title'].errors
+        "
+      >
+        <span *ngIf="postForm.controls['title'].errors['required']"
+          >Title required</span
+        >
+        <span *ngIf="postForm.controls['title'].errors['startName']"
+          >Title should be start with letter "x"</span
+        >
+      </div>
+    </div>
+    <div
+      class="col-12"
+      [class.field-error]="
+        (postForm.controls['body'].dirty ||
+          postForm.controls['body'].touched) &&
+        postForm.controls['body'].errors
+      "
+    >
+      <textarea
+        formControlName="body"
+        placeholder="Body"
+        class="col-12 form-control"
+      ></textarea>
+      <div
+        class="error-box"
+        *ngIf="
+          (postForm.controls['body'].dirty ||
+            postForm.controls['body'].touched) &&
+          postForm.controls['body'].errors
+        "
+      >
+        <span *ngIf="postForm.controls['body'].errors['required']"
+          >Body required</span
+        >
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <button class="btn btn-primary" (click)="createPost(postForm)">
+        Create Post
+      </button>
+    </div>
+  </div>
+</section>
