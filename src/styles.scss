@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.sidenav {
+  ul {
+    li {
+      padding: 10px;
+    }
+  }
+}
+
+.field-error {
+  input,
+  textarea {
+    border: 1px solid #ff0000;
+  }
+  .error-box {
+    color: #ff0000;
+  }
+}
